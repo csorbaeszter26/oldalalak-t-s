@@ -1,0 +1,181 @@
+* { 
+    margin:0;
+    padding:0; 
+    box-sizing: border-box;
+}
+
+body {
+    width: 90%;
+    max-width: 900px;
+    margin: auto;
+    background-image: url(hatter.jpg);
+    background-size: cover;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-areas: 
+        "h h h"
+        "n n n"
+        "b a j"
+        "f f f"; 
+}
+
+article {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+img {
+    width: 100%;
+}
+
+p, h2 {
+    color: white;
+}
+
+h1 {
+    color: lightblue;
+}
+
+.elso {
+    border: 1px solid white;
+    padding: 10px;
+    margin-right: 5px;
+}
+
+.masodik {
+    border: 1px solid white;
+    padding: 10px;
+    margin-right: 5px;
+}
+
+.harmadik {
+    border: 1px solid white;
+    padding: 10px;
+}
+
+/*kialakítunk rácsot és megmondjauk azon hogy néznek ki az elemek*/
+/*minden gyerekelemet elnevezek !!!!!!! fontos!!!! Egy se maradjopn ki!!!!*/
+
+header {
+    grid-area: h;
+}
+
+article {
+    grid-area: a;
+}
+
+nav {
+    grid-area: n;
+}
+
+footer {
+    grid-area: f;
+}
+
+aside#bal {
+    grid-area: b;
+}
+
+aside#jobb {
+    grid-area: j;
+}
+
+
+header, nav, article, footer, aside { /*verssző van köztük tehát mindre érvényes lesz*/
+    border: 1px solid white;
+    padding: 10px;
+}
+
+
+/*MENÜ KIALAKÍTÁSA*/
+nav ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    list-style-type: none;
+    text-align: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: darkslateblue;
+
+}
+
+nav li {
+    background-color: lightblue;
+    padding: 5px;
+}
+
+nav li:hover {
+    background-color: blueviolet;
+    
+}
+
+nav a:hover {
+    color: white;
+}
+
+
+/*TABLET nézet*/
+@media only screen and (max-width: 700px) {
+    body, main {
+        font-size:12px;
+        background-image: url(hatter.jpg);
+        background-size: cover;
+        width:100%;
+    }
+    main {
+        
+        grid-template-columns:1fr 1fr; 
+        grid-template-areas: 
+            "h h"
+            "n n"
+            "b b"
+            "j j"
+            "a a"
+            "f f"; 
+  }
+}
+
+
+
+/*mobil nézet - RESZPONZIVITÁS kialakítása*/
+/*ez legyen MINDIG az utolsó*/
+/*600(400) pixelnél lesz egy töréspont, amit ezután látsz az 600(400)px alattra ha kerülök csak akkor lehet látni!!*/
+@media only screen and (max-width: 450px) {
+    body, main {
+        font-size:12px;
+        background-image: url(hatter.jpg);
+        background-size: cover;
+        width:100%;
+    }
+    main {
+        
+        grid-template-columns:1fr; 
+        grid-template-areas: 
+            "h"
+            "n"
+            "a"
+            "b"
+            "j"
+            "f"; 
+  }
+
+  nav ul {
+    
+    grid-template-columns: 1fr; 
+    gap: 5px; 
+    list-style-type: none;
+    text-align: center;
+    }
+    article {
+        grid-template-columns: 1fr; 
+        gap: 5px; 
+    }
+}
+
+
+
